@@ -1,45 +1,50 @@
-# π\* rates of the Gym — Reward Rush Competition
+# π\* rates of the Gym
 
-> Reinforcement learning across eight environments: from frozen grids to bipedal locomotion.
+> Eight environments. One month. First place.
 
 **Team:** Vedant Narayanswami (EP25B040) · M Nharen (EE25B089) — IIT Madras  
-**Competition:** Reward Rush · January 2026  
-**Website:** [π\* rates of the Gym](https://sites.google.com/view/rewardrush-teampiratesofthegym/home)  
-**Report:** [`assets/report/rewardrushreportv3.pdf`](assets/report/rewardrushreportv3.pdf)
+**Competition:** Reward Rush · iBoT Club, IIT Madras · December 2025  
+**Website:** [π\* rates of the Gym](https://sites.google.com/view/rewardrush-teampiratesofthegym/home) · **Report:** [`assets/report/rewardrushreportv3.pdf`](assets/report/rewardrushreportv3.pdf)
+
+> 🥇 **First Place** — Reward Rush, iBoT Club, IIT Madras (December 2025)
 
 ---
 
-## Pretrained Models
+[![Walker2D — click to watch](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker/resolve/main/Walker.mp4)](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker)
 
-All trained models are hosted on 🤗 Hugging Face. Each model card has architecture details, common pitfalls, and a working eval script.
-
-| Environment | Algorithm | Model |
-|---|---|---|
-| Frozen Lake | Q-Learning | [🤗 Nharen/Reward\_Rush\_Q-learning\_Frozen\_lake\_Deterministic](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Frozen_lake_Deterministic) |
-| Taxi | Q-Learning | [🤗 Nharen/Reward\_Rush\_Q-learning\_Taxi](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Taxi) |
-| Stochastic Frozen Lake | Q-Learning | [🤗 Nharen/Reward\_Rush\_Q-learning\_Stochastic\_Frozen\_Lake](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Stochastic_Frozen_Lake) |
-| Lunar Lander | DQN | [🤗 Nharen/Reward\_Rush\_DQN\_Lunar\_Lander](https://huggingface.co/Nharen/Reward_Rush_DQN_Lunar_Lander) |
-| CartPole | DQN | [🤗 Nharen/Reward\_Rush\_DQN\_Cart\_Pole](https://huggingface.co/Nharen/Reward_Rush_DQN_Cart_Pole) |
-| Mountain Car Continuous | SAC | [🤗 Nharen/Reward\_Rush\_SAC\_Mountain\_Car](https://huggingface.co/Nharen/Reward_Rush_SAC_Mountain_Car) |
-| Half Cheetah | SAC | [🤗 Nharen/Reward\_Rush\_SAC\_Half\_Cheetah](https://huggingface.co/Nharen/Reward_Rush_SAC_Half_Cheetah) |
-| Walker2D | SAC | [🤗 Nharen/Reward\_Rush\_SAC\_Walker](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker) |
+*Walker2D trained with SAC — 4290 avg reward over 100 episodes. Click to watch on Hugging Face.*
 
 ---
 
 ## Results
 
-| Environment | Algorithm | Avg. Return | Notes |
-|---|---|---|---|
-| Frozen Lake | Q-Learning | 100% success | Optimal path every episode |
-| Taxi | Q-Learning | 100% success | Avg reward 7.89 |
-| Stochastic Frozen Lake | Q-Learning | 75% success rate | Variance from env stochasticity |
-| Lunar Lander | DQN | 260.00 | 100 episodes |
-| CartPole | DQN | **500.00** | Perfect score, zero variance |
-| Mountain Car Continuous | SAC | **96.07** | 100% success rate |
-| Half Cheetah | SAC | **9692.19 ± 142** | Max: 9969.90 |
-| Walker2D | SAC | **4290.40 ± 37.65** | Max: 4432.63 |
+| Environment | Algorithm | Result |
+|---|---|---|
+| Frozen Lake | Q-Learning | 100% success rate |
+| Taxi | Q-Learning | 100% success · 7.89 avg reward |
+| Stochastic Frozen Lake | Q-Learning | 75% success rate |
+| Lunar Lander | DQN | 260.18 avg · max 307 |
+| CartPole | DQN | **500.00 — perfect score** |
+| Mountain Car Continuous | SAC | **96.07 avg · 100% success** |
+| Half Cheetah | SAC | **9692 avg · max 9969** |
+| Walker2D | SAC | **4290 avg · max 4432** |
 
-Training curves for each environment are in `<env>/results/`.
+---
+
+## Pretrained Models
+
+All weights live on 🤗 Hugging Face — each model card has the architecture, common gotchas, and a working eval script.
+
+| Environment | Model |
+|---|---|
+| Frozen Lake | [Nharen/Reward\_Rush\_Q-learning\_Frozen\_lake\_Deterministic](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Frozen_lake_Deterministic) |
+| Taxi | [Nharen/Reward\_Rush\_Q-learning\_Taxi](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Taxi) |
+| Stochastic Frozen Lake | [Nharen/Reward\_Rush\_Q-learning\_Stochastic\_Frozen\_Lake](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Stochastic_Frozen_Lake) |
+| Lunar Lander | [Nharen/Reward\_Rush\_DQN\_Lunar\_Lander](https://huggingface.co/Nharen/Reward_Rush_DQN_Lunar_Lander) |
+| CartPole | [Nharen/Reward\_Rush\_DQN\_Cart\_Pole](https://huggingface.co/Nharen/Reward_Rush_DQN_Cart_Pole) |
+| Mountain Car Continuous | [Nharen/Reward\_Rush\_SAC\_Mountain\_Car](https://huggingface.co/Nharen/Reward_Rush_SAC_Mountain_Car) |
+| Half Cheetah | [Nharen/Reward\_Rush\_SAC\_Half\_Cheetah](https://huggingface.co/Nharen/Reward_Rush_SAC_Half_Cheetah) |
+| Walker2D | [Nharen/Reward\_Rush\_SAC\_Walker](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker) |
 
 ---
 
@@ -48,7 +53,7 @@ Training curves for each environment are in `<env>/results/`.
 ```bash
 pip install -r requirements.txt
 
-# Evaluate any agent — downloads the model from HuggingFace automatically
+# Evaluate any agent — downloads weights from Hugging Face automatically
 python frozen_lake/evaluate.py
 python lunar_lander/evaluate.py
 python walker2d/evaluate.py
@@ -57,20 +62,19 @@ python walker2d/evaluate.py
 python walker2d/train.py
 ```
 
-> **MuJoCo required** for Half Cheetah and Walker2D.  
-> Setup guide: https://mujoco.readthedocs.io/en/stable/python.html
+> MuJoCo required for Half Cheetah and Walker2D. [Setup guide →](https://mujoco.readthedocs.io/en/stable/python.html)
 
 ---
 
-## Approach
+## How we approached it
 
-We matched each algorithm to the structural properties of its environment.
+We spent the month matching algorithms to the structure of each environment rather than throwing the same method at everything.
 
-**Tabular Q-Learning** for small, fully discrete MDPs (Frozen Lake, Taxi, Stochastic Frozen Lake). A lookup table over state-action pairs is sufficient and guaranteed to converge.
+**Tabular Q-Learning** for the discrete grid worlds (Frozen Lake, Taxi, Stochastic Frozen Lake). When the entire state space fits in a table, a neural network is overkill — Q-learning converges cleanly and is dead simple to debug.
 
-**DQN** when the state space is continuous but actions stay discrete (Lunar Lander, CartPole). A neural network approximates Q-values, trained with experience replay.
+**DQN** for continuous states with discrete actions (Lunar Lander, CartPole). We actually started CartPole with REINFORCE, but policy gradient variance made training painfully unstable. Switching to DQN with experience replay got us to a perfect 500.00 in a fraction of the time. The REINFORCE run lives in `experiments/cartpole_reinforce/` as a cautionary tale.
 
-**SAC** for fully continuous control (Mountain Car, Half Cheetah, Walker2D). Entropy regularization prevents premature convergence and greatly improves sample efficiency.
+**SAC** for fully continuous control (Mountain Car, Half Cheetah, Walker2D). Entropy regularisation was the key — it keeps the policy exploring instead of collapsing early, which matters a lot on tasks as hard as Walker2D. We also ran PPO on Half Cheetah and Walker2D before settling on SAC; SAC won on both final return and training stability (see `experiments/`).
 
 ---
 
@@ -78,61 +82,59 @@ We matched each algorithm to the structural properties of its environment.
 
 ```
 reward-rush/
-├── frozen_lake/
-│   ├── train.py
-│   ├── evaluate.py       ← pulls model from HuggingFace, runs 100 episodes
-│   ├── config.yaml
-│   └── results/          ← training curves
-├── taxi/
-├── stochastic_frozen_lake/
-├── lunar_lander/
-├── cartpole/
-├── mountain_car_continuous/
-├── half_cheetah/
-├── walker2d/
+├── frozen_lake/             ← Q-Learning
+├── taxi/                    ← Q-Learning
+├── stochastic_frozen_lake/  ← Q-Learning + Q-Value Iteration
+├── lunar_lander/            ← DQN
+├── cartpole/                ← DQN
+├── mountain_car_continuous/ ← SAC
+├── half_cheetah/            ← SAC
+├── walker2d/                ← SAC
 │   └── notebooks/
-├── experiments/          ← PPO ablations (Walker2D, HalfCheetah)
+├── experiments/             ← PPO ablations, REINFORCE attempt
 ├── assets/
-│   └── report/           ← rewardrushreportv3.pdf + .tex source
+│   └── report/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
 ```
 
+Each environment folder follows the same layout:
+```
+<env>/
+├── train.py      ← training loop
+├── evaluate.py   ← pulls weights from HF, runs 100 episodes
+└── results/      ← training curves and plots
+```
+
 ---
 
-## Key Hyperparameters
+## Hyperparameters
 
-### Tabular (Frozen Lake · Taxi · Stochastic Frozen Lake)
-| Param | Frozen Lake / Taxi | Stochastic FL |
+### Tabular
+| | Frozen Lake / Taxi | Stochastic FL |
 |---|---|---|
 | Learning rate | 0.8 | 0.01 |
 | Discount γ | 0.95 | 0.99 |
 | ε decay | 0.0001 | 0.00005 |
 | Episodes | 10,000 | 20,000 |
 
-### DQN (Lunar Lander · CartPole)
-| Param | Lunar Lander | CartPole |
+### DQN
+| | Lunar Lander | CartPole |
 |---|---|---|
 | Learning rate | 1e-3 | 1e-3 |
-| Hidden layers | 2 × 32 | 2 × 128 |
-| Replay buffer | 10,000 · batch 256 | 10,000 · batch 256 |
+| Hidden size | 2 × 32 | 2 × 128 |
+| Replay buffer | 10K · batch 256 | 10K · batch 256 |
 | Discount γ | 0.99 | 0.99 |
 
-### SAC (Mountain Car · Half Cheetah · Walker2D)
+### SAC
 | Param | Value |
 |---|---|
 | Learning rate | 3e-4 |
 | Discount γ | 0.99 |
 | Soft update τ | 0.005 |
-| Entropy tuning | Automatic (init α = 0.2) |
-| Replay buffer | 100K (MountainCar) / 1M (Cheetah, Walker) |
-
----
-
-## Experiments
-
-`experiments/` contains PPO runs on Half Cheetah and Walker2D conducted before settling on SAC. SAC outperformed PPO on both tasks in final return and training stability.
+| Entropy tuning | Automatic (α init 0.2) |
+| Replay buffer | 100K (MountainCar) · 1M (Cheetah, Walker) |
 
 ---
 

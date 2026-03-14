@@ -10,24 +10,18 @@
 
 ---
 
-[![Walker2D — click to watch](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker/resolve/main/Walker.mp4)](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker)
-
-*Walker2D trained with SAC — 4290 avg reward over 100 episodes. Click to watch on Hugging Face.*
-
----
-
 ## Results
 
-| Environment | Algorithm | Result |
-|---|---|---|
-| Frozen Lake | Q-Learning | 100% success rate |
-| Taxi | Q-Learning | 100% success · 7.89 avg reward |
-| Stochastic Frozen Lake | Q-Learning | 75% success rate |
-| Lunar Lander | DQN | 260.18 avg · max 307 |
-| CartPole | DQN | **500.00 — perfect score** |
-| Mountain Car Continuous | SAC | **96.07 avg · 100% success** |
-| Half Cheetah | SAC | **9692 avg · max 9969** |
-| Walker2D | SAC | **4290 avg · max 4432** |
+| Environment             | Algorithm  | Result                         |
+| ----------------------- | ---------- | ------------------------------ |
+| Frozen Lake             | Q-Learning | 100% success rate              |
+| Taxi                    | Q-Learning | 100% success · 7.89 avg reward |
+| Stochastic Frozen Lake  | Q-Learning | 75% success rate               |
+| Lunar Lander            | DQN        | 260.18 avg · max 307           |
+| CartPole                | DQN        | **500.00 — perfect score**     |
+| Mountain Car Continuous | SAC        | **96.07 avg · 100% success**   |
+| Half Cheetah            | SAC        | **9692 avg · max 9969**        |
+| Walker2D                | SAC        | **4290 avg · max 4432**        |
 
 ---
 
@@ -35,16 +29,16 @@
 
 All weights live on 🤗 Hugging Face — each model card has the architecture, common gotchas, and a working eval script.
 
-| Environment | Model |
-|---|---|
-| Frozen Lake | [Nharen/Reward\_Rush\_Q-learning\_Frozen\_lake\_Deterministic](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Frozen_lake_Deterministic) |
-| Taxi | [Nharen/Reward\_Rush\_Q-learning\_Taxi](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Taxi) |
-| Stochastic Frozen Lake | [Nharen/Reward\_Rush\_Q-learning\_Stochastic\_Frozen\_Lake](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Stochastic_Frozen_Lake) |
-| Lunar Lander | [Nharen/Reward\_Rush\_DQN\_Lunar\_Lander](https://huggingface.co/Nharen/Reward_Rush_DQN_Lunar_Lander) |
-| CartPole | [Nharen/Reward\_Rush\_DQN\_Cart\_Pole](https://huggingface.co/Nharen/Reward_Rush_DQN_Cart_Pole) |
-| Mountain Car Continuous | [Nharen/Reward\_Rush\_SAC\_Mountain\_Car](https://huggingface.co/Nharen/Reward_Rush_SAC_Mountain_Car) |
-| Half Cheetah | [Nharen/Reward\_Rush\_SAC\_Half\_Cheetah](https://huggingface.co/Nharen/Reward_Rush_SAC_Half_Cheetah) |
-| Walker2D | [Nharen/Reward\_Rush\_SAC\_Walker](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker) |
+| Environment             | Model                                                                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Frozen Lake             | [Nharen/Reward_Rush_Q-learning_Frozen_lake_Deterministic](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Frozen_lake_Deterministic) |
+| Taxi                    | [Nharen/Reward_Rush_Q-learning_Taxi](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Taxi)                                           |
+| Stochastic Frozen Lake  | [Nharen/Reward_Rush_Q-learning_Stochastic_Frozen_Lake](https://huggingface.co/Nharen/Reward_Rush_Q-learning_Stochastic_Frozen_Lake)       |
+| Lunar Lander            | [Nharen/Reward_Rush_DQN_Lunar_Lander](https://huggingface.co/Nharen/Reward_Rush_DQN_Lunar_Lander)                                         |
+| CartPole                | [Nharen/Reward_Rush_DQN_Cart_Pole](https://huggingface.co/Nharen/Reward_Rush_DQN_Cart_Pole)                                               |
+| Mountain Car Continuous | [Nharen/Reward_Rush_SAC_Mountain_Car](https://huggingface.co/Nharen/Reward_Rush_SAC_Mountain_Car)                                         |
+| Half Cheetah            | [Nharen/Reward_Rush_SAC_Half_Cheetah](https://huggingface.co/Nharen/Reward_Rush_SAC_Half_Cheetah)                                         |
+| Walker2D                | [Nharen/Reward_Rush_SAC_Walker](https://huggingface.co/Nharen/Reward_Rush_SAC_Walker)                                                     |
 
 ---
 
@@ -100,6 +94,7 @@ reward-rush/
 ```
 
 Each environment folder follows the same layout:
+
 ```
 <env>/
 ├── train.py      ← training loop
@@ -112,35 +107,38 @@ Each environment folder follows the same layout:
 ## Hyperparameters
 
 ### Tabular
-| | Frozen Lake / Taxi | Stochastic FL |
-|---|---|---|
-| Learning rate | 0.8 | 0.01 |
-| Discount γ | 0.95 | 0.99 |
-| ε decay | 0.0001 | 0.00005 |
-| Episodes | 10,000 | 20,000 |
+
+|               | Frozen Lake / Taxi | Stochastic FL |
+| ------------- | ------------------ | ------------- |
+| Learning rate | 0.8                | 0.01          |
+| Discount γ    | 0.95               | 0.99          |
+| ε decay       | 0.0001             | 0.00005       |
+| Episodes      | 10,000             | 20,000        |
 
 ### DQN
-| | Lunar Lander | CartPole |
-|---|---|---|
-| Learning rate | 1e-3 | 1e-3 |
-| Hidden size | 2 × 32 | 2 × 128 |
+
+|               | Lunar Lander    | CartPole        |
+| ------------- | --------------- | --------------- |
+| Learning rate | 1e-3            | 1e-3            |
+| Hidden size   | 2 × 32          | 2 × 128         |
 | Replay buffer | 10K · batch 256 | 10K · batch 256 |
-| Discount γ | 0.99 | 0.99 |
+| Discount γ    | 0.99            | 0.99            |
 
 ### SAC
-| Param | Value |
-|---|---|
-| Learning rate | 3e-4 |
-| Discount γ | 0.99 |
-| Soft update τ | 0.005 |
-| Entropy tuning | Automatic (α init 0.2) |
-| Replay buffer | 100K (MountainCar) · 1M (Cheetah, Walker) |
+
+| Param          | Value                                     |
+| -------------- | ----------------------------------------- |
+| Learning rate  | 3e-4                                      |
+| Discount γ     | 0.99                                      |
+| Soft update τ  | 0.005                                     |
+| Entropy tuning | Automatic (α init 0.2)                    |
+| Replay buffer  | 100K (MountainCar) · 1M (Cheetah, Walker) |
 
 ---
 
 ## References
 
-- Sutton & Barto, *Reinforcement Learning: An Introduction* (2nd ed.)
+- Sutton & Barto, _Reinforcement Learning: An Introduction_ (2nd ed.)
 - Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290), 2018
 - Mnih et al., [Human-level control through deep RL](https://www.nature.com/articles/nature14236), 2015
 - [OpenAI Gymnasium](https://gymnasium.farama.org/)

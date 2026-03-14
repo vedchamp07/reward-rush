@@ -1,0 +1,27 @@
+# Core RL framework
+gymnasium[all]>=0.29.0
+
+# Deep learning (DQN, SAC)
+torch>=2.0.0
+
+# Scientific computing
+numpy>=1.24.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# MuJoCo — required for Half Cheetah and Walker2D
+# Installation guide: https://mujoco.readthedocs.io/en/stable/python.html
+mujoco>=3.0.0
+gymnasium[mujoco]>=0.29.0
+
+# Box2D — required for Lunar Lander
+gymnasium[box2d]>=0.29.0
+
+# Notebook support (optional)
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Optional: experiment tracking
+# tensorboard>=2.13.0
+# wandb>=0.15.0

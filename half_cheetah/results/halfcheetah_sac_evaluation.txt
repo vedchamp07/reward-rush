@@ -1,0 +1,58 @@
+Copying model files from dataset...
+✓ Copied best_model.pt
+✓ Copied best_model_metadata.json
+Files ready for evaluation!
+
+Loading best model...
+
+Evaluating best model over 20 episodes...
+
+/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  return datetime.utcnow().replace(tzinfo=utc)
+
+Episode 1/20: Reward = 9729.25, Length = 1000
+Episode 2/20: Reward = 9600.32, Length = 1000
+Episode 3/20: Reward = 9686.73, Length = 1000
+Episode 4/20: Reward = 9697.62, Length = 1000
+Episode 5/20: Reward = 9659.26, Length = 1000
+Episode 6/20: Reward = 9621.94, Length = 1000
+Episode 7/20: Reward = 9569.44, Length = 1000
+Episode 8/20: Reward = 9782.84, Length = 1000
+Episode 9/20: Reward = 9775.18, Length = 1000
+Episode 10/20: Reward = 9629.61, Length = 1000
+Episode 11/20: Reward = 9633.73, Length = 1000
+Episode 12/20: Reward = 9496.31, Length = 1000
+Episode 13/20: Reward = 9609.42, Length = 1000
+Episode 14/20: Reward = 9564.53, Length = 1000
+Episode 15/20: Reward = 9705.57, Length = 1000
+Episode 16/20: Reward = 9525.40, Length = 1000
+Episode 17/20: Reward = 9707.43, Length = 1000
+Episode 18/20: Reward = 9598.63, Length = 1000
+Episode 19/20: Reward = 9730.22, Length = 1000
+Episode 20/20: Reward = 9909.22, Length = 1000
+
+============================================================
+EVALUATION RESULTS
+============================================================
+Mean Reward: 9661.63 ± 95.33
+Min Reward: 9496.31
+Max Reward: 9909.22
+Mean Episode Length: 1000.0
+============================================================
+
+Evaluation plot saved to /kaggle/working/plots/best_model_evaluation.png
+
+Recording evaluation video...
+Video saved to /kaggle/working/videos/best_model_evaluation.mp4
+Evaluation results saved to /kaggle/working/models/evaluation_results.json
+
+Copying files to Kaggle output directory...
+  ✓ Copied best_model.pt
+  ✓ Copied best_model_metadata.json
+  ✓ Copied evaluation_results.json
+  ✓ Copied best_model_evaluation.png
+  ✗ Not found: final_training_stats.png
+  ✓ Copied best_model_evaluation.mp4
+  ✗ Not found: trained_agent.mp4
+
+✅ All files ready for download from Kaggle output!

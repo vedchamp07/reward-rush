@@ -52,8 +52,9 @@ python frozen_lake/evaluate.py
 python lunar_lander/evaluate.py
 python walker2d/evaluate.py
 
-# Train from scratch
-python walker2d/train.py
+# Train from scratch (Kaggle notebooks — run on Kaggle, not locally)
+# half_cheetah/train_kaggle.py
+# walker2d/train_kaggle.py
 ```
 
 > MuJoCo required for Half Cheetah and Walker2D. [Setup guide →](https://mujoco.readthedocs.io/en/stable/python.html)
@@ -97,9 +98,9 @@ Each environment folder follows the same layout:
 
 ```
 <env>/
-├── train.py      ← training loop
-├── evaluate.py   ← pulls weights from HF, runs 100 episodes
-└── results/      ← training curves and plots
+├── train.py           ← training loop (train_kaggle.py for Half Cheetah / Walker2D — Kaggle notebooks)
+├── evaluate.py        ← pulls weights from HF, runs 100 episodes
+└── results/           ← training curves and plots
 ```
 
 ---
